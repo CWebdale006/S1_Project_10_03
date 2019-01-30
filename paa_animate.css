@@ -32,7 +32,7 @@ nav#gameLinks a:hover {
     color: rgb(255, 194, 99);
 }
 
-/*Creates a gradient-colored bar gragually expands under each link when hovered. */
+/*Creates a gradient-colored bar that gradually expands under each link when hovered. */
 nav#gameLinks a::after {
     content: "";
     position: absolute;
@@ -40,20 +40,95 @@ nav#gameLinks a::after {
     left: 0px;
     width: 0%;
     height: 8px;
-    background: rgb(237, 243, 71) right;
+    background: linear-gradient(to right, rgb(237, 243, 71), rgb(188, 74, 0));
     border-radius: 4px;
     opacity: 0;
     transition: opacity 0.5s, width 0.5s;
 }
 
+/*Changes opacity of the bar to allow the user to see it when hovered. */
 nav#gameLinks a:hover::after {
     opacity: 1;
     width: 100%;
 }
 
-
-
 /* Sprite Styles */
+/*Displays all div elements of the sprite class with absolute positioning. */
+div.sprite {
+    position: absolute;
+}
 
+/*Affects div elements with the ID bat. Sets the width and height to 40 pixels by 50 pixels. Sets the top and left coordinates to 100 pixels and -50 pixels. Displays the paa_bat.png as the background image placed at the left center of the background with no tiling and sized to cover the background. */
+div#bat {
+    width: 40px;
+    height: 50px;
+    top: 100px;
+    left: -50px;
+    background: url(paa_bat.png) left center/cover no-repeat;
+}
+
+/*Affects divs with the ID butterfly. Sets the width and height to 35 pixels. Sets the top-left corrdinates at 60 pixels and -50 pixels. Uses the paa_bfly.png as the background image, placed at the left center with no tiling and sized to cover the background. */
+div#butterfly {
+    width: 35px;
+    height: 35px;
+    top: 60px;
+    left: -50px;
+    background: url(paa_bfly.png) left center/cover no-repeat;
+}
+
+/*Affects divs with the ID fox. Sets the width and height at 280 pixels and 260 pixels, the bottom and right coordinates at 10 pixels, and the paa_fox.png file as the background image. The background iamge is placed at the left center with no tiling and sized to cover the background. */
+div#fox {
+    width: 280px;
+    height: 260px;
+    bottom: 10px;
+    right: 10px;
+    background: url(paa_fox.png) left center/cover no-repeat;
+}
 
 /* Animation Styles */
+/*Created an animation named playSprite that sets the background image position to right center at 100% time. */
+@keyframes playSprite {
+    100% {
+        background-position: right center;
+    }
+}
+
+/*Created an animation named flyRight. Set multiple keyframes to add a flutter effect. */
+@keyframes flyRight {
+    25% {
+        top: 150px;
+    }
+
+    50% {
+        top: 55px;
+    }
+
+    65% {
+        top: 120px;
+    }
+
+    90% {
+        top: 50px;
+    }
+
+    100% {
+        top: 50px;
+        left: 100%;
+    }
+}
+
+/*Applies the playSprite to the div#fox element after a 4-second delay over a time interval of 3.5 seconds and a steps value of 27. Set to loop infinitely. */
+div#fox {
+    animation: playSprite steps(27) 3.5s 4s infinite;
+}
+
+/*Applies the playSprite animation to the div#bat element over a 2 second interval with 39 steps. Applies the flyRight animation over an 8 second interval with linear timing. Both animations loop infinitely. */
+div#bat {
+    animation: playSprite steps(39) 2s infinite;
+    animation: flyRight 8s linear infinite;
+}
+
+div#butterfly {
+    animation: playSprite steps(33) 1s 3s infinite;
+    animation: flyRight 8s linear infinite;
+}
