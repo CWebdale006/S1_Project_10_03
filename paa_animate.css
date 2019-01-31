@@ -124,11 +124,10 @@ div#fox {
 
 /*Applies the playSprite animation to the div#bat element over a 2 second interval with 39 steps. Applies the flyRight animation over an 8 second interval with linear timing. Both animations loop infinitely. */
 div#bat {
-    animation: playSprite steps(39) 2s infinite;
-    animation: flyRight 8s linear infinite;
+    animation: playSprite steps(39) 2s 0s infinite, flyRight 8s linear infinite;
 }
 
+/*Applies the playSprite animation to the butterfly div element after a 3-second delay, with a playing time of 1 second spaced out in 33 steps. Apply the flyRight animation over a 6-second interval. */
 div#butterfly {
-    animation: playSprite steps(33) 1s 3s infinite;
-    animation: flyRight 8s linear infinite;
+    animation: playSprite steps(33) 1s 3s infinite, flyRight 6s cubic-bezier(0, 1, 0.73, 0) infinite;
 }
