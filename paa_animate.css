@@ -58,9 +58,9 @@ div.sprite {
     position: absolute;
 }
 
-/*Affects div elements with the ID bat. Sets the width and height to 40 pixels by 50 pixels. Sets the top and left coordinates to 100 pixels and -50 pixels. Displays the paa_bat.png as the background image placed at the left center of the background with no tiling and sized to cover the background. */
+/*Affects div elements with the ID bat. Sets the width and height to 50 pixels by 50 pixels. Sets the top and left coordinates to 100 pixels and -50 pixels. Displays the paa_bat.png as the background image placed at the left center of the background with no tiling and sized to cover the background. */
 div#bat {
-    width: 40px;
+    width: 50px;
     height: 50px;
     top: 100px;
     left: -50px;
